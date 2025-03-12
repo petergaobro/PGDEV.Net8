@@ -1,0 +1,6 @@
+@PGDEV.Net8_HostAddress = http://localhost:5195
+
+GET {{PGDEV.Net8_HostAddress}}/weatherforecast/
+Accept: application/json
+
+### like postman
