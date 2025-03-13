@@ -1,3 +1,7 @@
+using PGDEV.Net8.IService;
+using PGDEV.Net8.Repository;
+using PGDEV.Net8.Service;
+
 namespace PGDEV.Net8
 {
     public class Program
@@ -16,6 +20,8 @@ namespace PGDEV.Net8
             builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
             AutoMapperConfig.RegisterMappings();
 
+            builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            builder.Services.AddScoped(typeof(IBaseServices<,>), typeof(BaseServices<,>));
 
             var app = builder.Build();
 
