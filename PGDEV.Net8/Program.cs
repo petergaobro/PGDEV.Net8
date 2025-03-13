@@ -2,6 +2,7 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using PGDEV.Net8.Common;
 using PGDEV.Net8.Extensions;
 using PGDEV.Net8.Extensions.ServiceExtensions;
 using PGDEV.Net8.IService;
@@ -32,6 +33,9 @@ namespace PGDEV.Net8
 
             builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
             AutoMapperConfig.RegisterMappings();
+
+            // appSettings
+            builder.Services.AddSingleton(new AppSettings(builder.Configuration));
 
             var app = builder.Build();
 

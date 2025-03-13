@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using PGDEV.Net8.Common;
 using PGDEV.Net8.IService;
 using PGDEV.Net8.Model;
 using PGDEV.Net8.Service;
@@ -45,6 +46,12 @@ namespace BCVP.Net8.Controllers
             //var roleList = await roleService.Query();
 
             var roleList = await _roleService.Query();
+
+            var redisEnable = AppSettings.app(new string[] { "Redis", "Enable" });
+            var redisConnectionString = AppSettings.GetValue("Redis:ConnectionString");
+            Console.WriteLine($"Enable: {redisEnable} ,  ConnectionString: {redisConnectionString}");
+
+
 
             //var roleList = await _roleService.Query();
 
