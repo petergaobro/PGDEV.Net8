@@ -2,8 +2,8 @@
 
 namespace PGDEV.Net8.IService
 {
-    public interface IUserService
+    public interface IBaseServices<TEntity, TVo> where TEntity : class
     {
-        Task<List<UserVo>> Query();
+        Task<List<TVo>> Query();
     }
 }
