@@ -47,6 +47,8 @@ namespace BCVP.Net8.Controllers
             var roleList = await _roleService.Query();
 
             //var roleList = await _roleService.Query();
+
+            Console.WriteLine("api request end");
             return roleList;
 
         }

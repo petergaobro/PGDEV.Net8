@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDEV.Net8.IService", "PGDE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDEV.Net8.Service", "PGDEV.Net8.Service\PGDEV.Net8.Service.csproj", "{CAE40CA8-C19A-4B68-A5EE-9190C939D588}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDEV.Net8.Extension", "PGDEV.Net8.Extensions\PGDEV.Net8.Extension.csproj", "{44D87F2E-D56F-4BF6-AF46-844E414A88A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGDEV.Net8.Extensions", "PGDEV.Net8.Extensions\PGDEV.Net8.Extensions.csproj", "{44D87F2E-D56F-4BF6-AF46-844E414A88A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

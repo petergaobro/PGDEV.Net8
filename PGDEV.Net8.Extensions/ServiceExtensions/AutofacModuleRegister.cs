@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PGDEV.Net8.Extension
+namespace PGDEV.Net8.Extensions.ServiceExtensions
 {
     public class AutofacModuleRegister : Autofac.Module
     {
