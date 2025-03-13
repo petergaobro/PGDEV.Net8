@@ -1,3 +1,9 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc.Controllers;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using PGDEV.Net8.Extension;
+using PGDEV.Net8.Extensions;
 using PGDEV.Net8.IService;
 using PGDEV.Net8.Repository;
 using PGDEV.Net8.Service;
@@ -9,8 +15,15 @@ namespace PGDEV.Net8
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory())
+                .ConfigureContainer<ContainerBuilder>(builder =>
+                {
+                    builder.RegisterModule<AutofacModuleRegister>();
+                    builder.RegisterModule<AutofacPropertityModuleReg>();
+                });
 
             // Add services to the container.
+            builder.Services.Replace(ServiceDescriptor.Transient<IControllerActivator, ServiceBasedControllerActivator>());
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -19,9 +32,6 @@ namespace PGDEV.Net8
 
             builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
             AutoMapperConfig.RegisterMappings();
-
-            builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            builder.Services.AddScoped(typeof(IBaseServices<,>), typeof(BaseServices<,>));
 
             var app = builder.Build();
 

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 
-namespace PGDEV.Net8
+namespace PGDEV.Net8.Extension
 {
     /// <summary>
     /// 静态全局 AutoMapper 配置文件

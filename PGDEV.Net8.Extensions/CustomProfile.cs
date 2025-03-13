@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using PGDEV.Net8.Model;
 
-namespace PGDEV.Net8
+namespace PGDEV.Net8.Extension
 {
     public class CustomProfile : Profile
     {
